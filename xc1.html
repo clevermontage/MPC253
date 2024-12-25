@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clever.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(./a2.jpg);
+            color:white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-weight: 20px;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            font-weight: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+            font-weight: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="greeting">Merry Exams!</h1>
+        <p id="christmasMessage"></p>
+    </div>
+
+    <script>
+        // Get the name from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+
+        if (name) {
+            // Set the "Merry Exams" greeting
+            document.getElementById('greeting').textContent = `Merry Christmas, ${name}!`;
+
+            // Set the Christmas message
+            document.getElementById('christmasMessage').innerHTML = `
+                Dear ${name},<br><br>
+                As the Christmas season fills the air with joy and warmth, I want to take a moment to celebrate the gift of having you in my life. 
+                <br><br>
+                May this festive season bring you and your family endless blessings, laughter, and peace. 
+                <br><br>
+                May your hearts be light, your homes filled with love, and your days merry and bright. 
+                <br><br>
+                Let's cherish the moments of togetherness and the spirit of giving that make this season so special.
+                <br><br>
+                Wishing you a Merry Christmas and a New Year full of hope, health, and happiness. Stay safe and enjoy every moment!
+                <br><br>
+                With love,<br>
+                [CLEVER]
+            `;
+        }
+    </script>
+</body>
+</html>

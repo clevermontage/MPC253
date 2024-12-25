@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clever.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(./a2.jpg);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="redirectToNextPage()">Submit</button>
+    </div>
+
+    <script>
+        function redirectToNextPage() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) {
+                // Redirect to xc1.html with the name as a query parameter
+                window.location.href = `xc1.html?name=${encodeURIComponent(name)}`;
+            } else {
+                alert("Please enter your name.");
+            }
+        }
+    </script>
+</body>
+</html>
